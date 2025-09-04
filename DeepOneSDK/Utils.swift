@@ -27,28 +27,34 @@ internal extension Locale {
     }
 }
 
+/// Generates device fingerprint data for attribution analysis
 internal func getDeviceFingerprint() -> [String: Any] {
     var deviceInfo = [String: Any]()
-
+    
+    // Platform information
     deviceInfo["os"] = "iOS"
     deviceInfo["osVersion"] = ProcessInfo.processInfo.operatingSystemVersion.formatted
     
 #if canImport(UIKit)
+    // iOS device information
     deviceInfo["screenSize"] = "\(Int(UIScreen.main.nativeBounds.width)) x \(Int(UIScreen.main.nativeBounds.height))"
     deviceInfo["model"] = UIDevice.current.model
     deviceInfo["deviceId"] = UIDevice.current.identifierForVendor?.uuidString ?? UUID().uuidString
 #elseif canImport(Cocoa)
+    // macOS device information
     deviceInfo["screenSize"] = "\(Int(NSScreen.main?.frame.width ?? 0)) x \(Int(NSScreen.main?.frame.height ?? 0))"
     deviceInfo["model"] = ProcessInfo.processInfo.hostName
     deviceInfo["deviceId"] = getMacSerialIdentifier() ?? UUID().uuidString
 #endif
     
+    // Localization information
     deviceInfo["languageCode"] = Locale.preferredLanguageCode
     
     return deviceInfo
 }
 
 #if canImport(Cocoa)
+/// Retrieves the Mac hardware serial number for device identification
 internal func getMacSerialIdentifier() -> String? {
     var platformExpert: io_service_t = 0
     guard let serviceName = "IOPlatformExpertDevice" as NSString? else { return nil }

@@ -7,17 +7,24 @@ import UIKit
 import Cocoa
 #endif
 
+/// DeepOne provides comprehensive deep linking and deferred deep linking capabilities for iOS and macOS applications.
+/// This modern SDK offers attribution tracking, link generation, and seamless user experience management.
 @objcMembers
 public class DeepOne: NSObject {
     
+    // MARK: - Attribution Parameters
+    /// Parameter keys for routing and attribution information (Objective-C compatible)
     @objc public static let AttributionParameterOriginURL = "origin_url"
     @objc public static let AttributionParameterRoutePath = "route_path"
     @objc public static let AttributionParameterQueryParameters = "query_params"
     @objc public static let AttributionParameterIsFirstSession = "is_first_session"
     @objc public static let AttributionParameterAttributionData = "attribution_data"
     
+    // MARK: - Error Constants
+    /// Error domain for DeepOne operations
     @objc public static let DeepOneErrorDomain = "DeepOneErrorDomain"
     
+    /// Error codes for DeepOne operations
     @objc public enum DeepOneErrorCode: Int {
         case invalidConfiguration = 1001
         case networkError = 1002
@@ -26,13 +33,18 @@ public class DeepOne: NSObject {
         case missingCredentials = 1005
     }
     
+    // MARK: - Type Aliases
+    /// Handler for processing incoming deep link attribution with type-safe data model
     public typealias AttributionHandler = (_ attributionData: DeepOneAttributionData?, _ error: NSError?) -> Void
     
+    // MARK: - Singleton Instance
     public static let shared = DeepOne()
 
+    // MARK: - Properties
     private var isDevelopmentMode = false
     private var attributionHandler: AttributionHandler?
     
+    /// API credentials for link verification and generation
     private var apiKey: String? {
         guard
             let keys = Bundle.main.object(forInfoDictionaryKey: "DeepOne.keys") as? [String: Any],
@@ -40,6 +52,7 @@ public class DeepOne: NSObject {
         return key
     }
     
+    /// Tracks if this is the first session ever (persists across reinstalls via keychain)
     private var isFirstSession: Bool {
         didSet {
             if !isFirstSession {
@@ -59,12 +72,24 @@ public class DeepOne: NSObject {
     }
 
 #if canImport(UIKit)
+    /// Configures the DeepOne SDK with application launch context and attribution handling.
+    ///
+    /// - Parameters:
+    ///   - launchOptions: The launch options from the application delegate
+    ///   - developmentMode: Enable development mode for testing. Default is `false`.
+    ///   - attributionHandler: Closure to handle incoming attribution data
     public func configure(launchOptions: [UIApplication.LaunchOptionsKey: Any]?, 
                          developmentMode: Bool = false,  
                          attributionHandler: AttributionHandler?) {
         _configure(developmentMode: developmentMode, attributionHandler: attributionHandler)
     }
 #elseif canImport(Cocoa)
+    /// Configures the DeepOne SDK with macOS application context and attribution handling.
+    ///
+    /// - Parameters:
+    ///   - notification: The application launch notification
+    ///   - developmentMode: Enable development mode for testing. Default is `false`.
+    ///   - attributionHandler: Closure to handle incoming attribution data
     public func configure(notification: Notification, 
                          developmentMode: Bool = false,  
                          attributionHandler: AttributionHandler?) {
@@ -72,6 +97,11 @@ public class DeepOne: NSObject {
     }
 #endif
 
+    /// Creates a new attributed link with the specified configuration
+    ///
+    /// - Parameters:
+    ///   - configuration: Link configuration containing routing and attribution parameters
+    ///   - completion: Completion handler with the generated URL or error
     @objc public func createAttributedLink(configuration: DeepOneCreateLinkBuilder, completion: @escaping (URL?, NSError?) -> Void) {
         guard let parameters = configuration.buildParameters() else { 
             let error = NSError(domain: DeepOne.DeepOneErrorDomain, 
@@ -110,6 +140,10 @@ public class DeepOne: NSObject {
         }
     }
 
+    /// Processes universal link user activity for attribution
+    ///
+    /// - Parameter activity: The NSUserActivity from universal link handling
+    /// - Returns: Boolean indicating successful attribution processing
     @objc(continueUserActivity:)
     @discardableResult public func processUniversalLink(_ activity: NSUserActivity) -> Bool {
         guard
@@ -118,10 +152,15 @@ public class DeepOne: NSObject {
         return processAttributionData(from: url)
     }
 
+    /// Clears all persisted attribution data (resets first session tracking)
     @objc public func clearAttributionData() {
         DeepOneCoreAPI.deleteKeychainData(key: "first_session_marker")
     }
 
+    /// Processes an incoming URL for attribution tracking
+    ///
+    /// - Parameter url: The URL to process for attribution
+    /// - Returns: Boolean indicating successful processing
     @objc @discardableResult
     public func trackAttributionURL(_ url: URL) -> Bool {
         return processAttributionData(from: url)
@@ -181,6 +220,7 @@ public class DeepOne: NSObject {
         }
     }
     
+    /// Extracts marketing attribution parameters from query parameters
     private func extractMarketingAttribution(from queryParams: [String: Any]) -> [String: Any] {
         var marketingData = [String: Any]()
         
@@ -205,9 +245,12 @@ public class DeepOne: NSObject {
     }
 }
 
+// MARK: - Swift Convenience Methods
+
 #if swift(>=5.5)
 extension DeepOne {
     
+    /// Swift-specific link creation with Result type and async/await
     @available(iOS 13.0, macOS 10.15, *)
     public func createAttributedLink(configuration: DeepOneCreateLinkBuilder) async -> Result<URL, DeepOneSwiftError> {
         return await withCheckedContinuation { continuation in
@@ -224,6 +267,7 @@ extension DeepOne {
     }
 }
 
+/// Swift-specific error enum for modern error handling
 public enum DeepOneSwiftError: Error, LocalizedError {
     case invalidConfiguration
     case networkError(Error)
