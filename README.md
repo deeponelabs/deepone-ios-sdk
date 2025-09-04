@@ -34,7 +34,7 @@ Or add it to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/DeepOneIO/DeepOneSDK.git", from: "1.1.9")
+    .package(url: "https://github.com/DeepOneIO/DeepOneSDK.git", from: "1.0.1")
 ]
 ```
 
@@ -43,7 +43,7 @@ dependencies: [
 Add this line to your `Podfile`:
 
 ```ruby
-pod 'DeepOneSDK', '~> 1.1.9'
+pod 'DeepOneSDK', '~> 1.0.1'
 ```
 
 Then run:
