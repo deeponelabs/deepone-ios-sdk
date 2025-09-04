@@ -26,7 +26,7 @@ Add DeepOneSDK to your project using Xcode:
 1. In Xcode, go to **File → Add Package Dependencies**
 2. Enter the repository URL:
    ```
-   https://github.com/DeepOneIO/DeepOneSDK.git
+   https://github.com/deeponelabs/deepone-ios-sdk.git
    ```
 3. Select the version range and add to your target
 
@@ -34,7 +34,7 @@ Or add it to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/DeepOneIO/DeepOneSDK.git", from: "1.0.1")
+    .package(url: "https://github.com/deeponelabs/deepone-ios-sdk.git", from: "1.0.1")
 ]
 ```
 
@@ -286,7 +286,7 @@ DeepOne.shared.clearAttributionData()
 
 ## 💬 **Support**
 
-- 📧 Email: [support@deeponeio.com](mailto:support@deeponeio.com)
+- 📧 Email: [contact@deepone.io](mailto:contact@deepone.io)
 - 💼 Website: [https://deepone.io](https://deepone.io)
 
 ## 📄 **License**
@@ -295,4 +295,4 @@ DeepOneSDK is available under the MIT license. See the [LICENSE](LICENSE) file f
 
 ---
 
-**Made with ❤️ by DeepOneIO**
+**Made with ❤️ by DeepOneLabs**
