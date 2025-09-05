@@ -10,7 +10,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		sFH7n82qAtMbOhpHJSIAxyhPt8c=
+		8Taziz+sB+GlML7aVLEMZTwsxTM=
 		</data>
 		<key>Modules/DeepOneNetworking.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -18,7 +18,7 @@
 		</data>
 		<key>Modules/DeepOneNetworking.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		xwh8cpWNy+dkL5OV2t5t/qEU8No=
+		jdZSowHnf9JIVpvhf2OJITS5cHU=
 		</data>
 		<key>Modules/DeepOneNetworking.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -26,11 +26,11 @@
 		</data>
 		<key>Modules/DeepOneNetworking.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		xwh8cpWNy+dkL5OV2t5t/qEU8No=
+		jdZSowHnf9JIVpvhf2OJITS5cHU=
 		</data>
 		<key>Modules/DeepOneNetworking.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		TtT/fX6DzQTrVG1BtDe1rPl3QKA=
+		vAAaVQ1e7u7QRPlsYaK2gaZoErY=
 		</data>
 		<key>Modules/DeepOneNetworking.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Modules/DeepOneNetworking.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		QBZlU4WWT7mR9L2Mq4cYMnFDrwk=
+		lAz+M7M7YVoBJSncIzejzKhk+XY=
 		</data>
 		<key>Modules/DeepOneNetworking.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -46,11 +46,11 @@
 		</data>
 		<key>Modules/DeepOneNetworking.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		QBZlU4WWT7mR9L2Mq4cYMnFDrwk=
+		lAz+M7M7YVoBJSncIzejzKhk+XY=
 		</data>
 		<key>Modules/DeepOneNetworking.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Sqb06UcWmCbiNPWGtuhcm83OS0Q=
+		LzKdnL665lFGrm5IBl6rM6aGRsc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -77,7 +77,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			sqRsgdzO4oAcUIH27XqkB3ZwWkFKJZTdFIYE5RxvnQo=
+			duIzuS0Fi4BvILcHZ4Fikgx6pnY74j3zgNiePsIyn+w=
 			</data>
 		</dict>
 		<key>Modules/DeepOneNetworking.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -91,14 +91,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			sqRsgdzO4oAcUIH27XqkB3ZwWkFKJZTdFIYE5RxvnQo=
+			duIzuS0Fi4BvILcHZ4Fikgx6pnY74j3zgNiePsIyn+w=
 			</data>
 		</dict>
 		<key>Modules/DeepOneNetworking.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			YHQWJ/Z/tj2Gu0TzVf/T/8Q38LV3oXswkS92a+2FS6o=
+			rH8f+3CmkZT3H2Xr1vE1jma11a0ORZmzYej53NTBQOY=
 			</data>
 		</dict>
 		<key>Modules/DeepOneNetworking.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
@@ -112,7 +112,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			K5gbgVEghTRWRDX0uN3o5maSeVRQTfaVXVAKigmFxMg=
+			mkoeWCp1KthNk99I1eFrVDtyqsiNmmIaAKOmGE1clDw=
 			</data>
 		</dict>
 		<key>Modules/DeepOneNetworking.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -126,14 +126,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			K5gbgVEghTRWRDX0uN3o5maSeVRQTfaVXVAKigmFxMg=
+			mkoeWCp1KthNk99I1eFrVDtyqsiNmmIaAKOmGE1clDw=
 			</data>
 		</dict>
 		<key>Modules/DeepOneNetworking.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			n+KTAWtqEKK9/+0eQ28xq8nx5Y/6dvIhU7cc46S9Te8=
+			pArIAgnyj/7Bt68FGl7ADUKPVlx0V5DSw4cvCxd3GjU=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

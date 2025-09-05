@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "DeepOneSDK"
-  spec.version      = "1.1.1"
+  spec.version      = "1.1.2"
   spec.summary      = "DeepOne SDK for iOS - Deep Linking and Attribution"
   spec.description  = <<-DESC
                       DeepOne SDK provides comprehensive deep linking and attribution 
@@ -27,4 +27,10 @@ Pod::Spec.new do |spec|
   
   # Module settings
   spec.module_name = "DeepOneSDK"
+  spec.platform     = :ios, '13.0'
+  spec.pod_target_xcconfig = {
+    'SUPPORTS_MACCATALYST'    => 'YES',
+    'IPHONEOS_DEPLOYMENT_TARGET' => '13.0',
+    'MACOSX_DEPLOYMENT_TARGET'   => '10.15'
+  }
 end

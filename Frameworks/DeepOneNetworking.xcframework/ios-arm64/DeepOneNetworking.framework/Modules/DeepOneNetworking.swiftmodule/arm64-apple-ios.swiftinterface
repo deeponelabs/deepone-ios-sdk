@@ -11,8 +11,8 @@ import WebKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
-@_hasMissingDesignatedInitializers public class DeepOneCoreAPI {
-  public static let shared: DeepOneNetworking.DeepOneCoreAPI
+@_hasMissingDesignatedInitializers public class DeepOneNetworkingAPI {
+  public static let shared: DeepOneNetworking.DeepOneNetworkingAPI
   public func verify(deviceFingerprint: [Swift.String : Any], apiKey: Swift.String, callback: @escaping @Sendable (Swift.Result<[Swift.String : Any], any Swift.Error>) -> Swift.Void)
   public func createLink(params: [Swift.String : Any], apiKey: Swift.String, callback: @escaping @Sendable (Swift.Result<Foundation.URL?, any Swift.Error>) -> Swift.Void)
   public static func setKeychainValue(value: Swift.String, forKey key: Swift.String)
