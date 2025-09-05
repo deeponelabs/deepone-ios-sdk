@@ -1,4 +1,4 @@
-# DeepOneSDK iOS SDK
+# DeepOne iOS SDK
 
 ![iOS](https://img.shields.io/badge/iOS-13.0%2B-blue)
 ![Swift](https://img.shields.io/badge/Swift-5.0%2B-orange)
@@ -34,7 +34,7 @@ Or add it to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/deeponelabs/deepone-ios-sdk.git", from: "1.0.1")
+    .package(url: "https://github.com/deeponelabs/deepone-ios-sdk.git", from: "1.1.0")
 ]
 ```
 
@@ -43,7 +43,7 @@ dependencies: [
 Add this line to your `Podfile`:
 
 ```ruby
-pod 'DeepOneSDK', '~> 1.0.1'
+pod 'DeepOneSDK', '~> 1.1.0'
 ```
 
 Then run:
@@ -286,7 +286,7 @@ DeepOne.shared.clearAttributionData()
 
 ## 💬 **Support**
 
-- 📧 Email: [contact@deepone.io](mailto:contact@deepone.io)
+- 📧 Email: [contact@deepone.com](mailto:contact@deepone.io)
 - 💼 Website: [https://deepone.io](https://deepone.io)
 
 ## 📄 **License**
@@ -295,4 +295,4 @@ DeepOneSDK is available under the MIT license. See the [LICENSE](LICENSE) file f
 
 ---
 
-**Made with ❤️ by DeepOneLabs**
+**Made with ❤️ by DeepOneIO**

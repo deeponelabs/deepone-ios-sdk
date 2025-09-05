@@ -15,6 +15,10 @@ let package = Package(
     dependencies: [
     ],
     targets: [
+        .binaryTarget(
+            name: "DeepOneNetworking",
+            path: "Frameworks/DeepOneNetworking.xcframework"
+        ),
         .target(
             name: "DeepOneSDK",
             dependencies: ["DeepOneNetworking"],
