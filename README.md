@@ -286,7 +286,7 @@ DeepOne.shared.clearAttributionData()
 
 ## 💬 **Support**
 
-- 📧 Email: [contact@deepone.com](mailto:contact@deepone.io)
+- 📧 Email: [contact@deepone.io](mailto:contact@deepone.io)
 - 💼 Website: [https://deepone.io](https://deepone.io)
 
 ## 📄 **License**
