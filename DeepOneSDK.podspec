@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "DeepOneSDK"
-  spec.version      = "1.1.0"
+  spec.version      = "1.1.1"
   spec.summary      = "DeepOne SDK for iOS - Deep Linking and Attribution"
   spec.description  = <<-DESC
                       DeepOne SDK provides comprehensive deep linking and attribution 
@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
 
   spec.homepage     = "https://github.com/deeponelabs/deepone-ios-sdk"
   spec.license      = { :type => "MIT", :file => "LICENSE" }
-  spec.author       = { "DeepOneIO" => "support@deeponeio.io" }
+  spec.author       = { "DeepOneIO" => "contact@deeponeio.io" }
   spec.source       = { :git => "https://github.com/deeponelabs/deepone-ios-sdk.git", :tag => "#{spec.version}" }
   
   # Public framework source files

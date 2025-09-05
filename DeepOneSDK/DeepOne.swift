@@ -1,5 +1,5 @@
 import Foundation
-import DeepOneCore
+import DeepOneNetworking
 
 #if canImport(UIKit)
 import UIKit
@@ -56,15 +56,15 @@ public class DeepOne: NSObject {
     private var isFirstSession: Bool {
         didSet {
             if !isFirstSession {
-                DeepOneCoreAPI.setKeychainData(value: Data(), forKey: "first_session_marker")
+                DeepOneNetworkingAPI.setKeychainData(value: Data(), forKey: "first_session_marker")
             } else {
-                DeepOneCoreAPI.deleteKeychainData(key: "first_session_marker")
+                DeepOneNetworkingAPI.deleteKeychainData(key: "first_session_marker")
             }
         }
     }
 
     private override init() {
-        isFirstSession = DeepOneCoreAPI.getKeychainData(key: "first_session_marker") == nil
+        isFirstSession = DeepOneNetworkingAPI.getKeychainData(key: "first_session_marker") == nil
         super.init()
         defer {
             isFirstSession = false
@@ -111,7 +111,7 @@ public class DeepOne: NSObject {
             return 
         }
         
-        DeepOneCoreAPI.shared.createLink(params: parameters,
+        DeepOneNetworkingAPI.shared.createLink(params: parameters,
                                          apiKey: apiKey ?? "") { result in
             switch result {
                 case .success(let url):
@@ -154,7 +154,7 @@ public class DeepOne: NSObject {
 
     /// Clears all persisted attribution data (resets first session tracking)
     @objc public func clearAttributionData() {
-        DeepOneCoreAPI.deleteKeychainData(key: "first_session_marker")
+        DeepOneNetworkingAPI.deleteKeychainData(key: "first_session_marker")
     }
 
     /// Processes an incoming URL for attribution tracking
@@ -199,7 +199,7 @@ public class DeepOne: NSObject {
     }
 
     private func performAttributionAnalysis(callback: @escaping (URL?, NSError?) -> Void) {
-        DeepOneCoreAPI.shared.verify(deviceFingerprint: getDeviceFingerprint(), 
+        DeepOneNetworkingAPI.shared.verify(deviceFingerprint: getDeviceFingerprint(), 
                                      apiKey: apiKey ?? "") { result in
             switch result {
                 case .success(let response):
