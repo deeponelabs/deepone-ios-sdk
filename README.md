@@ -34,7 +34,7 @@ Or add it to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/deeponelabs/deepone-ios-sdk.git", from: "1.1.2")
+    .package(url: "https://github.com/deeponelabs/deepone-ios-sdk.git", from: "1.1.3")
 ]
 ```
 
@@ -43,7 +43,7 @@ dependencies: [
 Add this line to your `Podfile`:
 
 ```ruby
-pod 'DeepOneSDK', '~> 1.1.2'
+pod 'DeepOneSDK', '~> 1.1.3'
 ```
 
 Then run:
@@ -286,7 +286,7 @@ DeepOne.shared.clearAttributionData()
 
 ## 💬 **Support**
 
-- 📧 Email: [contact@deepone.com](mailto:contact@deepone.io)
+- 📧 Email: [contact@deepone.io](mailto:contact@deepone.io)
 - 💼 Website: [https://deepone.io](https://deepone.io)
 
 ## 📄 **License**

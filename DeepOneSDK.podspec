@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "DeepOneSDK"
-  spec.version      = "1.1.2"
+  spec.version      = "1.1.3"
   spec.summary      = "DeepOne SDK for iOS - Deep Linking and Attribution"
   spec.description  = <<-DESC
                       DeepOne SDK provides comprehensive deep linking and attribution 
