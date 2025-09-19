@@ -1,0 +1,48 @@
+name: Publish to CocoaPods
+
+on:
+  push:
+    tags:
+      - '*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to publish'
+        required: true
+        type: string
+
+jobs:
+  publish:
+    runs-on: macos-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.0'
+        bundler-cache: true
+
+    - name: Install CocoaPods
+      run: |
+        gem install cocoapods
+        pod --version
+
+    - name: Setup CocoaPods credentials
+      run: |
+        # Create .netrc file for CocoaPods authentication
+        cat > ~/.netrc << EOF
+        machine trunk.cocoapods.org
+          login ${{ secrets.COCOAPODS_LOGIN }}
+          password ${{ secrets.COCOAPODS_PASSWORD }}
+        EOF
+        chmod 600 ~/.netrc
+
+    - name: Publish to CocoaPods
+      run: |
+        # Push to CocoaPods trunk (will automatically find *.podspec in root)
+        pod trunk push --allow-warnings --verbose
