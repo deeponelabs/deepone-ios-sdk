@@ -247,6 +247,16 @@ DeepOne.shared.configure(launchOptions: launchOptions) { attributionData, error 
 }
 ```
 
+## Configuring Associated Domains
+
+To enable Universal Links in your app, you need to declare the associated domains your app will handle.
+
+1. In Xcode, select your app target.
+2. Go to **Signing & Capabilities** → click **+ Capability** → add **Associated Domains**.
+3. Under **Associated Domains**, add your domain(s) in the following format:
+`applinks:{your_subdomain}.deepone.io`
+
+
 ## 🛠️ **Advanced Configuration**
 
 ### Development vs Live Mode
