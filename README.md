@@ -253,7 +253,7 @@ To enable Universal Links in your app, you need to declare the associated domain
 
 1. In Xcode, select your app target.
 2. Go to **Signing & Capabilities** → click **+ Capability** → add **Associated Domains**.
-3. Under **Associated Domains**, add your domain(s) in the following format:
+3. Under **Associated Domains**, add your domain(s) in the following format:  
 `applinks:{your_subdomain}.deepone.io`
 
 
