@@ -1,0 +1,54 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - '*'
+
+permissions:
+  contents: write
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Get tag name
+      id: tag
+      run: echo "tag=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+
+    - name: Generate release notes
+      id: release_notes
+      run: |
+        # Get the previous tag to generate changelog
+        PREVIOUS_TAG=$(git describe --tags --abbrev=0 HEAD^ 2>/dev/null || echo "")
+        
+        if [ -n "$PREVIOUS_TAG" ]; then
+          echo "## What's Changed" > release_notes.md
+          echo "" >> release_notes.md
+          
+          # Get commits since previous tag
+          git log --pretty=format:"- %s" ${PREVIOUS_TAG}..HEAD >> release_notes.md
+          
+          echo "" >> release_notes.md
+          echo "## Full Changelog" >> release_notes.md
+          echo "**Full Changelog**: https://github.com/${{ github.repository }}/compare/${PREVIOUS_TAG}...${{ steps.tag.outputs.tag }}" >> release_notes.md
+        else
+          echo "## What's Changed" > release_notes.md
+          echo "" >> release_notes.md
+          echo "🎉 Initial release of ${{ steps.tag.outputs.tag }}" >> release_notes.md
+        fi
+
+    - name: Create Release
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        # Create release with notes
+        gh release create "${{ steps.tag.outputs.tag }}" \
+          --title "${{ steps.tag.outputs.tag }}" \
+          --notes-file release_notes.md

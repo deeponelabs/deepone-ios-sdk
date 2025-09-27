@@ -1,4 +1,4 @@
-// swift-tools-version: 5.7
+// swift-tools-version: 5.3
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -13,15 +13,14 @@ let package = Package(
         ),
     ],
     dependencies: [
+        .package(url: "https://github.com/deeponelabs/deepone-ios-networking.git", from: "1.1.4")
     ],
     targets: [
-        .binaryTarget(
-            name: "DeepOneNetworking",
-            path: "Frameworks/DeepOneNetworking.xcframework"
-        ),
         .target(
             name: "DeepOneSDK",
-            dependencies: ["DeepOneNetworking"],
+            dependencies: [
+                .product(name: "DeepOneNetworking", package: "deepone-ios-networking")
+            ],
             path: "DeepOneSDK",
             publicHeadersPath: ".",
             cSettings: [
