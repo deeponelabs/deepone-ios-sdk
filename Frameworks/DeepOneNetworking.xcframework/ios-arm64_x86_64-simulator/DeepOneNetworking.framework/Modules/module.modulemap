@@ -1,4 +1,0 @@
-framework module DeepOneNetworking {
-  header "DeepOneNetworking-Swift.h"
-  requires objc
-}
