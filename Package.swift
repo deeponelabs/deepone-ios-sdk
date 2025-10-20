@@ -5,7 +5,6 @@ import PackageDescription
 
 let package = Package(
     name: "DeepOneSDK",
-
     products: [
         .library(
             name: "DeepOneSDK",
@@ -13,7 +12,7 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/deeponelabs/deepone-ios-networking.git", from: "1.1.6")
+        .package(url: "https://github.com/deeponelabs/deepone-ios-networking.git", from: "1.1.7")
     ],
     targets: [
         .target(

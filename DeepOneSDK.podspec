@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "DeepOneSDK"
-  spec.version      = "1.1.6"
+  spec.version      = "1.1.7"
   spec.summary      = "DeepOne SDK for iOS - Deep Linking and Attribution"
   spec.description  = <<-DESC
                       DeepOne SDK provides comprehensive deep linking and attribution 
@@ -18,7 +18,7 @@ Pod::Spec.new do |spec|
   spec.public_header_files = "DeepOneSDK/**/*.h"
   
   # Dependencies
-  spec.dependency "DeepOneNetworking", "~> 1.1.6"
+  spec.dependency "DeepOneNetworking", "~> 1.1.7"
   
   # Build settings
   spec.frameworks = "Foundation", "UIKit", "Security"
