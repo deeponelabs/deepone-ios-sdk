@@ -1,4 +1,4 @@
-// swift-tools-version: 5.3
+// swift-tools-version:5.3
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -13,7 +13,7 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/deeponelabs/deepone-ios-networking.git", from: "1.1.5")
+        .package(url: "https://github.com/deeponelabs/deepone-ios-networking.git", from: "1.1.6")
     ],
     targets: [
         .target(

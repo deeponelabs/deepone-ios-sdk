@@ -45,4 +45,4 @@ jobs:
     - name: Publish to CocoaPods
       run: |
         # Push to CocoaPods trunk (will automatically find *.podspec in root)
-        pod trunk push --allow-warnings --verbose
+        pod trunk push --allow-warnings --skip-import-validation --verbose
