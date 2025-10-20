@@ -12,7 +12,7 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/deeponelabs/deepone-ios-networking.git", from: "1.1.7")
+        .package(url: "https://github.com/deeponelabs/deepone-ios-networking.git", from: "1.1.8")
     ],
     targets: [
         .target(
